@@ -1,7 +1,8 @@
-/* body {
-    overflow-x: hidden;
-} */
 
+*{
+    padding: 0;
+    margin: 0;
+}
 .menu {
     height: 100%;
     width: 0;
@@ -14,7 +15,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     border-right: 3px solid rgb(255, 255, 255);
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .menu>a {
@@ -72,7 +73,7 @@
 
 .menu-open-btn {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 19px;
+    left: 18px;
     font-size: 20px;
 }
