@@ -1,0 +1,78 @@
+/* body {
+    overflow-x: hidden;
+} */
+
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    /* box-shadow: 10px 10px 12px 12px white; */
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-right: 3px solid rgb(255, 255, 255);
+    padding-top: 60px;
+}
+
+.menu>a {
+    padding: 4px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid silver;
+    color: #1b1b1b;
+    background-color: #fffafa;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu>a:hover{
+    background-color: #4a4a4a;
+}
+.menu .close-btn{
+    padding: 2px 4px ;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: none;
+    color: #1b1b1b;
+    background-color: #fffafa;
+    display: block;
+    transition: 0.3s;
+}
+.menu-open-btn{
+    width: 35px;
+    height: 35px;
+    background-image: url('list.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: aqua;
+
+}
+.menu-open-btn:hover{
+    border: none;
+}
+
+.menu a:hover {
+    color: #fa3434;
+    text-decoration: none;
+    
+}
+
+.menu .close-btn {
+    position: absolute;
+    float: left;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu-open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+}
