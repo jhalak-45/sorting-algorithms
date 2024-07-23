@@ -46,6 +46,6 @@ downloadButton.addEventListener('click', () => {
 
     const link = document.createElement('a');
     link.href = canvas.toDataURL();
-    link.download = `${link.href}.png`;
+    link.download = 'sorted-array.png';
     link.click();
 });

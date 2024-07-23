@@ -28,11 +28,11 @@
         }
 
         .bar.heap {
-            background-color: #d88a0c;
+            background-color: yellow;
         }
 
         .bar.swapping {
-            background-color: #e74c3c;
+            background-color: red;
         }
     </style>
 </head>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="container bg-white py-4">
-        <h2 class="mb-4 text-center">Heap Sort </h2>
+        <h2 class="mb-3 text-center">Heap Sort </h2>
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="array-size">Array Size:</label>
@@ -74,11 +74,24 @@
                 <button id="set-elements-button" class="btn btn-primary mt-2">Set Elements</button>
             </div>
         </div>
-        <div id="array-container" class="mb-4"></div>
+        <div id="array-container" class="mb-3"></div>
         <div class="row justify-content-center">
             <button id="sort-button" class="btn px-3 py-2 rounded-1 btn-success">Start Sorting</button>
             <button id="download-button" class="btn btn-info ml-2">Download</button>
-
+        </div>
+        <div class="legend row px-5 py-1 pb-0">
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: red;"></div>
+                <div class="legend-text">Current</div>
+            </div>
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: yellow;"></div>
+                <div class="legend-text">Comparing</div>
+            </div>
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: #2ecc71;"></div>
+                <div class="legend-text">Sorted</div>
+            </div>
         </div>
     </div>
 

@@ -74,9 +74,9 @@ async function countingSortByDigit(exp) {
     // Copy output array back to the original array
     for (let i = 0; i < n; i++) {
         array[i] = output[i];
-        updateBar(i, array[i], 'comparing');
+        updateBar(i, array[i], 'current');
         await sleep(speed);
-        updateBar(i, array[i], '');
+        updateBar(i, array[i], 'comparing');
     }
 }
 

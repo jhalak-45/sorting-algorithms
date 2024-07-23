@@ -5,7 +5,7 @@ const speedInput = document.getElementById('speed');
 const setElementsButton = document.getElementById('set-elements-button');
 const arraySizeInput = document.getElementById('array-size');
 const arrayElementsInput = document.getElementById('array-elements');
-
+const errText = document.getElementById('err');
 let array = [];
 let speed = 100;
 
@@ -22,7 +22,7 @@ function setArrayElements(elements) {
         array = elements.split(',').map(Number);
         displayArray();
     } else {
-        document.getElementById('err').innerText = "Enter Array Elements separated by commas.";
+        errText.innerText = "Enter array elements separated by commas.";
     }
 }
 
@@ -50,9 +50,10 @@ async function partition(arr, low, high) {
     const pivot = arr[high];
     let i = low - 1;
     const bars = document.getElementsByClassName('bar');
+    bars[high].classList.add('current'); // Mark the pivot as the current bar
 
     for (let j = low; j < high; j++) {
-        bars[j].style.backgroundColor = 'red';
+        bars[j].classList.add('comparing'); // Comparing bar
         if (arr[j] < pivot) {
             i++;
             [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -60,11 +61,13 @@ async function partition(arr, low, high) {
             updateBar(j, arr[j]);
         }
         await sleep(speed);
-        bars[j].style.backgroundColor = '#3498db';
+        bars[j].classList.remove('comparing');
     }
     [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
     updateBar(i + 1, arr[i + 1]);
     updateBar(high, arr[high]);
+    bars[high].classList.remove('current');
+    bars[i + 1].classList.add('sorted'); // Mark the pivot position as sorted
     return i + 1;
 }
 
@@ -85,7 +88,7 @@ sortButton.addEventListener('click', () => {
         for (let i = 0; i < bars.length; i++) {
             bars[i].classList.add('sorted');
         }
-     });
+    });
 });
 
 generateButton.addEventListener('click', () => {

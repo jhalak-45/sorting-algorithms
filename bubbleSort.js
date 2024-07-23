@@ -1,4 +1,3 @@
-
 const arrayContainer = document.getElementById('array-container');
 const sortButton = document.getElementById('sort-button');
 const generateButton = document.getElementById('generate-button');
@@ -23,7 +22,7 @@ function setArrayElements(elements) {
         array = elements.split(',').map(Number);
         displayArray();
     } else {
-        err.innerText = "Enter array elements separated by commas.";
+        errText.innerText = "Enter array elements separated by commas.";
     }
 }
 
@@ -42,8 +41,8 @@ async function bubbleSort() {
     const bars = document.getElementsByClassName('bar');
     for (let i = 0; i < array.length - 1; i++) {
         for (let j = 0; j < array.length - i - 1; j++) {
-            bars[j].style.backgroundColor = 'red';
-            bars[j + 1].style.backgroundColor = 'red';
+            bars[j].classList.add('comparing'); // Comparing bar
+            bars[j + 1].classList.add('comparing'); // Comparing bar
             await sleep(speed);
             if (array[j] > array[j + 1]) {
                 [array[j], array[j + 1]] = [array[j + 1], array[j]];
@@ -52,12 +51,12 @@ async function bubbleSort() {
                 bars[j + 1].style.height = `${array[j + 1] * 3}px`;
                 bars[j + 1].innerText = array[j + 1];
             }
-            bars[j].style.backgroundColor = '#3498db';
-            bars[j + 1].style.backgroundColor = '#3498db';
+            bars[j].classList.remove('comparing');
+            bars[j + 1].classList.remove('comparing');
         }
-        bars[array.length - i - 1].classList.add('sorted');
+        bars[array.length - i - 1].classList.add('sorted'); // Sorted bar
     }
-    bars[0].classList.add('sorted');
+    bars[0].classList.add('sorted'); // Sorted bar
 }
 
 function sleep(ms) {
@@ -66,7 +65,13 @@ function sleep(ms) {
 
 sortButton.addEventListener('click', () => {
     speed = parseFloat(speedInput.value) * 1000;
-    bubbleSort();
+    bubbleSort().then(() => {
+        displayArray();
+        const bars = document.getElementsByClassName('bar');
+        for (let i = 0; i < bars.length; i++) {
+            bars[i].classList.add('sorted');
+        }
+    });
 });
 
 generateButton.addEventListener('click', () => {

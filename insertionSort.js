@@ -5,6 +5,7 @@ const speedInput = document.getElementById('speed');
 const setElementsButton = document.getElementById('set-elements-button');
 const arraySizeInput = document.getElementById('array-size');
 const arrayElementsInput = document.getElementById('array-elements');
+const errText = document.getElementById('err');
 
 let array = [];
 let speed = 100;
@@ -21,8 +22,9 @@ function setArrayElements(elements) {
     if (elements) {
         array = elements.split(',').map(Number);
         displayArray();
+        errText.innerText = ""; // Clear error message
     } else {
-        document.getElementById('err').innerText = "Enter Array Elements separated by commas.";
+        errText.innerText = "Enter array elements separated by commas.";
     }
 }
 
@@ -42,21 +44,25 @@ async function insertionSort() {
     for (let i = 1; i < array.length; i++) {
         let key = array[i];
         let j = i - 1;
-        bars[i].style.backgroundColor = 'red';
+        bars[i].style.backgroundColor = 'red'; // Current bar
 
         while (j >= 0 && array[j] > key) {
-            bars[j].style.backgroundColor = 'yellow';
+            bars[j].style.backgroundColor = 'yellow'; // Comparing bar
+            await sleep(speed);
             bars[j + 1].style.height = `${array[j] * 3}px`;
             bars[j + 1].innerText = array[j];
             array[j + 1] = array[j];
+            bars[j].style.backgroundColor = '#3498db'; // Reset to default color
             j--;
-            await sleep(speed);
-            bars[j + 1].style.backgroundColor = '#3498db';
         }
         array[j + 1] = key;
         bars[j + 1].style.height = `${key * 3}px`;
         bars[j + 1].innerText = key;
-        bars[j + 1].style.backgroundColor = '#2ecc71';
+        bars[i].style.backgroundColor = '#3498db'; // Reset to default color
+    }
+    for (let i = 0; i < bars.length; i++) {
+        bars[i].classList.add('sorted'); // Sorted bar
+        bars[i].style.backgroundColor = '#2ecc71'; // Green color for sorted
     }
 }
 

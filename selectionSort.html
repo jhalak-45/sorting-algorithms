@@ -9,7 +9,33 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
+    <style>
+        .bar {
+            width: 30px;
+            margin: 0 2px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color: rgb(15, 14, 14);
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .bar.sorted {
+            background-color: #2ecc71;
+        }
+
+        .bar.current {
+            background-color: #f39c12;
+        }
+
+        .bar.comparing {
+            background-color: #e74c3c;
+        }
+    </style>
 </head>
+
 
 <body>
     <input type="button" value="" id="menubtn" class="menu-open-btn rounded-0 outline-0 btn bg-transparent">
@@ -28,7 +54,7 @@
         <a href="exchangeSort.html">Exchange Sort</a>
     </div>
     <div class="container bg-white py-4">
-        <h2 class="mb-4 text-center">Selection Sort</h2>
+        <h2 class="mb-3 text-center">Selection Sort</h2>
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="array-size">Array Size:</label>
@@ -47,11 +73,24 @@
                 <button id="set-elements-button" class="btn btn-primary mt-2">Set Elements</button>
             </div>
         </div>
-        <div id="array-container" class="mb-4"></div>
+        <div id="array-container" class="mb-3"></div>
         <div class="row justify-content-center">
             <button id="sort-button" class="btn px-3 py-2 rounded-1 btn-success">Start Sorting</button>
             <button id="download-button" class="btn btn-info ml-2">Download</button>
-
+        </div>
+        <div class="legend row px-5 py-1 pb-0">
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: red;"></div>
+                <div class="legend-text">Current</div>
+            </div>
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: yellow;"></div>
+                <div class="legend-text">Comparing</div>
+            </div>
+            <div class="d-md-flex px-1">
+                <div class="legend-box" style="background-color: #2ecc71;"></div>
+                <div class="legend-text">Sorted</div>
+            </div>
         </div>
     </div>
 

@@ -43,7 +43,7 @@ async function selectionSort() {
         let minIndex = i;
         bars[i].style.backgroundColor = 'red';
         for (let j = i + 1; j < array.length; j++) {
-            bars[j].style.backgroundColor = 'purple';
+            bars[j].style.backgroundColor = 'yellow';
             await sleep(speed);
             if (array[j] < array[minIndex]) {
                 if (minIndex !== i) {
