@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Sort Visualization</title>
+    <title>Heap Sort Visualization</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <style>
+      
+
         .bar {
             width: 30px;
             margin: 0 2px;
@@ -16,7 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            color: rgb(17, 15, 15);
+            color: rgb(21, 20, 20);
             font-weight: bold;
             transition: background-color 0.3s;
         }
@@ -25,12 +27,12 @@
             background-color: #2ecc71;
         }
 
-        .bar.current {
-            background-color: red;
+        .bar.heap {
+            background-color: yellow;
         }
 
-        .bar.comparing {
-            background-color: yellow;
+        .bar.swapping {
+            background-color: red;
         }
     </style>
 </head>
@@ -41,19 +43,19 @@
     <div id="menu" class="menu">
         <a href="javascript:void(0)" class="close-btn">&times;</a>
         <h5 class="h5 text-left text-dark px-1 py-2">Sorting Algorithms</h5>
-        <a href="bubbleSortwithVisualization.html">Bubble Sort</a>
-        <a href="selectionSort.html">Selection Sort</a>
-        <a href="insertionSort.html">Insertion Sort</a>
-        <a href="mergeSort.html">Merge Sort</a>
-        <a href="quickSort.html">Quick Sort</a>
-        <a href="heapSort.html">Heap Sort</a>
-        <a href="radixSort.html">Radix Sort</a>
-        <a href="shellSort.html">Shell Sort</a>
-        <a href="exchangeSort.html">Exchange Sort</a>
+        <a href="../algorithms/bubbleSort.html">Bubble Sort</a>
+        <a href="../algorithms/selectionSort.html">Selection Sort</a>
+        <a href="../algorithms/insertionSort.html">Insertion Sort</a>
+        <a href="../algorithms/mergeSort.html">Merge Sort</a>
+        <a href="../algorithms/quickSort.html">Quick Sort</a>
+        <a href="../algorithms/heapSort.html">Heap Sort</a>
+        <a href="../algorithms/radixSort.html">Radix Sort</a>
+        <a href="../algorithms/shellSort.html">Shell Sort</a>
+        <a href="../algorithms/exchangeSort.html">Exchange Sort</a>
     </div>
 
     <div class="container bg-white py-4">
-        <h2 class="mb-3 text-center">Quick Sort </h2>
+        <h2 class="mb-3 text-center">Heap Sort </h2>
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="array-size">Array Size:</label>
@@ -93,8 +95,8 @@
         </div>
     </div>
 
-    <script src="quickSort.js"></script>
-    <script src="menu.js"></script>
+    <script src="../../js/algorithms/heapSort.js"></script>
+    <script src="../../js/scripts/menu.js"></script>
 </body>
 
 </html>

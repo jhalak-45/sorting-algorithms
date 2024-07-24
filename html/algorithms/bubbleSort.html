@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merge Sort Visualization</title>
+    <title>Bubble Sort Visualization</title>
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
-</head>
-<style>
-    .bar {
+    <link rel="stylesheet" href="../../css/main.css">
+    <style>
+        .bar {
             width: 30px;
             margin: 0 2px;
             background-color: #3498db;
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            color: dark;
+            color: white;
             font-weight: bold;
             transition: background-color 0.3s;
         }
@@ -33,28 +32,29 @@
         .bar.comparing {
             background-color: yellow;
         }
-</style>
-<body>
-    <input type="button" value="" id="menubtn" class="menu-open-btn btn bg-transparent rounded-0 btn-outline-none">
-    <div id="menu" class="menu">
-        <a href="javascript:void(0)" class="close-btn">&times;</a>
-        <h5 class="h5 text-left text-dark px-1 py-2">Sorting Algorithms</h5>
-        <a href="bubbleSortwithVisualization.html">Bubble Sort</a>
-        <a href="selectionSort.html">Selection Sort</a>
-        <a href="insertionSort.html">Insertion Sort</a>
-        <a href="mergeSort.html">Merge Sort</a>
-        <a href="quickSort.html">Quick Sort</a>
-        <a href="heapSort.html">Heap Sort</a>
-        <a href="radixSort.html">Radix Sort</a>
-        <a href="shellSort.html">Shell Sort</a>
-        <a href="exchangeSort.html">Exchange Sort</a>
-    </div>
+    </style>
+</head>
 
+<body>
     <div class="container bg-white py-4">
-        <h2 class="mb-3 text-center">Merge Sort </h2>
+        <input type="button" id="menubtn" class="menu-open-btn float-left mt-1 btn p-1 rounded-0 border-0 outline-none">
+        <div id="menu" class="menu">
+            <a href="javascript:void(0)" class="close-btn">&times;</a>
+            <h5 class="h5 text-left text-dark px-1 py-2">Sorting Algorithms</h5>
+            <a href="../algorithms/bubbleSort.html">Bubble Sort</a>
+            <a href="../algorithms/selectionSort.html">Selection Sort</a>
+            <a href="../algorithms/insertionSort.html">Insertion Sort</a>
+            <a href="../algorithms/mergeSort.html">Merge Sort</a>
+            <a href="../algorithms/quickSort.html">Quick Sort</a>
+            <a href="../algorithms/heapSort.html">Heap Sort</a>
+            <a href="../algorithms/radixSort.html">Radix Sort</a>
+            <a href="../algorithms/shellSort.html">Shell Sort</a>
+            <a href="../algorithms/exchangeSort.html">Exchange Sort</a>
+        </div>
+        <h2 class="mb-3 text-center">Bubble Sort </h2>
         <div class="row">
             <div class="form-group col-md-3">
-                <label for="array-size">Array Size:</label>
+                <label for="array-size text-left">Array Size:</label>
                 <input type="number" id="array-size" class="form-control" min="1" max="50" value="15">
                 <button id="generate-button" class="btn btn-primary mt-2">Generate Array</button>
             </div>
@@ -66,13 +66,13 @@
                 <label for="array-elements">Array Elements:</label>
                 <input type="text" id="array-elements" class="form-control"
                     placeholder="Enter like this: 5,4,3,6,7,8,9,8,6,5">
-                <p id="err" class="text-danger"></p>
+                <p id="err" class="text-danger "></p>
                 <button id="set-elements-button" class="btn btn-primary mt-2">Set Elements</button>
             </div>
         </div>
         <div id="array-container" class="mb-3"></div>
         <div class="row justify-content-center">
-            <button id="sort-button" class="btn px-3 py-2 rounded-1 btn-success">Start Sorting</button>
+            <button id="sort-button" class="btn  px-3 py-2 rounded-1 btn-success">Start Sorting</button>
             <button id="download-button" class="btn btn-info ml-2">Download</button>
         </div>
         <div class="legend row px-5 py-1 pb-0">
@@ -90,9 +90,8 @@
             </div>
         </div>
     </div>
-
-    <script src="mergeSort.js"></script>
-    <script src="menu.js"></script>
+    <script src="../../js/algorithms/bubbleSort.js"></script>
+    <script src="../../js/scripts/menu.js"></script>
 </body>
 
 </html>

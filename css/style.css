@@ -45,7 +45,7 @@
 .menu-open-btn{
     width: 35px;
     height: 35px;
-    background-image: url('list.svg');
+    background-image: url('../list-icon.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
